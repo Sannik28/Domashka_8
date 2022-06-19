@@ -69,48 +69,122 @@ int main()
 	}
 		cout << newnum;
 		*/
-	/*
-	int a, b;
-	cout << "Введите число a." << endl;
-	cin >> a;
-	b = a;
-	while (b >0) {
-		if ((a % (b * b) == 0) && (a % (b * b * b) != 0)) { cout << b << endl; }
-		b--;
-	}
-	*/
-	/*
-	int a, b;
-	cout << "Введите число." << endl;
-	cin >> a;
-	b = pow((a+a+a),3);
-	if (b==a*a) cout << "Куб суммы цифр введенного числа равен квадрату введенного числа." << endl;
-	else cout << "Куб суммы цифр введенного числа не равен квадрату введенного числа." << endl;
-	*/
-	/*
-	int a, b;
-	cout << "Введите число" << endl;
-	cin >> a;
-	b = a;
-	while (b > 0) {
-		if (a % b == 0)
-			cout << b << endl;
-		b--;
-	}
-	*/
-	int a, b,a1;
-	cout << "Введите число 1" << endl;
-	cin >> a;
-	cout << "Введите число 2" << endl;
-	cin >> b;
-	if (a > b) a1 = b;
-	else a1 = a;
-	while (a1 > 0) {
-		if ((a % a1 == 0)&&(b%a1==0))
-			cout << a1 << endl;
-		a1--;
-	}
+		/*
+		int a, b;
+		cout << "Введите число a." << endl;
+		cin >> a;
+		b = a;
+		while (b >0) {
+			if ((a % (b * b) == 0) && (a % (b * b * b) != 0)) { cout << b << endl; }
+			b--;
+		}
+		*/
+		/*
+		int a, b;
+		cout << "Введите число." << endl;
+		cin >> a;
+		b = pow((a+a+a),3);
+		if (b==a*a) cout << "Куб суммы цифр введенного числа равен квадрату введенного числа." << endl;
+		else cout << "Куб суммы цифр введенного числа не равен квадрату введенного числа." << endl;
+		*/
+		/*
+		int a, b;
+		cout << "Введите число" << endl;
+		cin >> a;
+		b = a;
+		while (b > 0) {
+			if (a % b == 0)
+				cout << b << endl;
+			b--;
+		}
+		*/
+		/*
+		int a, b,a1;
+		cout << "Введите число 1" << endl;
+		cin >> a;
+		cout << "Введите число 2" << endl;
+		cin >> b;
+		if (a > b) a1 = b;
+		else a1 = a;
+		while (a1 > 0) {
+			if ((a % a1 == 0)&&(b%a1==0))
+				cout << a1 << endl;
+			a1--;
+		}
+		*/
 
+	int n;
+	char l = '*', t = '-';
+	cout << "Укажите номер фигуры для вывода на экран" << endl
+		<< "1 - a\n2 - б\n3 - в\n4 - г\n5 - д\n6 - е\n7 - ж\n 8 - з\n 9 - и\n10 - к\nвыход\n";
+	do {
+		cin >> n;
+		switch (n) {
+		case 1: {
+			for (int i = 0; i < 8; i++) {
+				cout << string((8 - i), char(l)) << string(i, char(t));
+				cout << endl;
+			}
+			break;
+		}
+		case 2: {
+			for (int i = 0; i < 8; i++) {
+				cout << string(i, char(l)) << string((8 - i), char(t));
+				cout << endl;
+			}
+			break;
+		}
+		case 3: {
+			int m = 0;
+			for (int i = 0; i < 8; i++) {
+				for (int j = 0; j <= 8 - i; j++) {
+					if (j >= i) {
+						cout << "*";
+					}
+					else cout << "-";
+					m = j;
+				}
+				cout << string((8 - m), t);
+				cout << "\n";
+			}
+			break;
+		}
+
+		case 4: {
+			for (int i = 0; i < 9; i++) {
+				for (int j = 0; j < 9; j++) {
+					if (i >= j && i + j >= 9 - 1)
+						cout << '*';
+					else cout << "-";
+				}
+				cout << "\n";
+			}
+			break;
+		}
+		case 5: {
+			for (int i = 0; i < 9; i++) {
+				for (int j = 0; j < 9; j++) {
+					if (i >= j && i + j >= 9 - 1|| i <= j && i + j <= 9 - 1)
+						cout << '*';
+					else cout << "-";
+				}
+				cout << "\n";
+			}
+			break;
+		}
+		case 6: {
+			for (int i = 0; i < 9; i++) {
+				for (int j = 0; j < 9; j++) {
+					if (i > j && i + j > 9 - 1 || i < j && i + j < 9 - 1)
+						cout << '-';
+					else cout << '*';
+				}
+				cout << "\n";
+			}
+			break;
+		}
+		}
+	} while (n != 6);
 }
 
 // Запуск программы: CTRL+F5 или меню "Отладка" > "Запуск без отладки"
