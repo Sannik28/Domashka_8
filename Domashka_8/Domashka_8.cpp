@@ -116,7 +116,7 @@ int main()
 	int n;
 	char l = '*', t = '-';
 	cout << "Укажите номер фигуры для вывода на экран" << endl
-		<< "1 - a\n2 - б\n3 - в\n4 - г\n5 - д\n6 - е\n7 - ж\n 8 - з\n 9 - и\n10 - к\nвыход\n";
+		<< "1 - a\n2 - б\n3 - в\n4 - г\n5 - д\n6 - е\n7 - ж\n8 - з\n9 - и\n10 - к\n0 - выход\n";
 	do {
 		cin >> n;
 		switch (n) {
@@ -128,7 +128,7 @@ int main()
 			break;
 		}
 		case 2: {
-			for (int i = 0; i < 8; i++) {
+			for (int i = 1; i < 9; i++) {
 				cout << string(i, char(l)) << string((8 - i), char(t));
 				cout << endl;
 			}
@@ -186,7 +186,29 @@ int main()
 		case 7: {
 			for (int i = 0; i < 9; i++) {
 				for (int j = 0; j < 9; j++) {
-					if (i + j > 9 - 1 && i < j)
+					if (i >= j && i + j <= 9 - 1)
+						cout << '*';
+					else cout << '-';
+				}
+				cout << "\n";
+			}
+			break;
+		}
+		case 8: {
+			for (int i = 0; i < 9; i++) {
+				for (int j = 0; j < 9; j++) {
+					if (i + j >= 9 - 1 && i <= j)
+						cout << '*';
+					else cout << '-';
+				}
+				cout << "\n";
+			}
+			break;
+		}
+		case 9: {
+			for (int i = 0; i < 9; i++) {
+				for (int j = 0; j < 9; j++) {
+					if (i + j > 9 - 1)
 						cout << '-';
 					else cout << '*';
 				}
@@ -194,8 +216,19 @@ int main()
 			}
 			break;
 		}
+		case 10: {
+			for (int i = 0; i < 9; i++) {
+				for (int j = 0; j < 9; j++) {
+					if (i <= j)
+						cout << '*';
+					else cout << '-';
+				}
+				cout << "\n";
+			}
+			break;
 		}
-	} while (n != 6);
+		}
+	} while (n != 0);
 }
 
 // Запуск программы: CTRL+F5 или меню "Отладка" > "Запуск без отладки"
