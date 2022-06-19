@@ -138,7 +138,7 @@ int main()
 			int m = 0;
 			for (int i = 0; i < 9; i++) {
 				for (int j = 0; j < 9 - i; j++) {
-					if (j > i) {
+					if (j >=i) {
 						cout << "*";
 					}
 					else cout << "-";
@@ -176,6 +176,17 @@ int main()
 			for (int i = 0; i < 9; i++) {
 				for (int j = 0; j < 9; j++) {
 					if (i > j && i + j > 9 - 1 || i < j && i + j < 9 - 1)
+						cout << '-';
+					else cout << '*';
+				}
+				cout << "\n";
+			}
+			break;
+		}
+		case 7: {
+			for (int i = 0; i < 9; i++) {
+				for (int j = 0; j < 9; j++) {
+					if (i + j > 9 - 1 && i < j)
 						cout << '-';
 					else cout << '*';
 				}
