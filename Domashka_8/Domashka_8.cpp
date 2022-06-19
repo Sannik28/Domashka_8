@@ -136,15 +136,15 @@ int main()
 		}
 		case 3: {
 			int m = 0;
-			for (int i = 0; i < 8; i++) {
-				for (int j = 0; j <= 8 - i; j++) {
-					if (j >= i) {
+			for (int i = 0; i < 9; i++) {
+				for (int j = 0; j < 9 - i; j++) {
+					if (j > i) {
 						cout << "*";
 					}
 					else cout << "-";
 					m = j;
 				}
-				cout << string((8 - m), t);
+				cout << string((9 - m), t);
 				cout << "\n";
 			}
 			break;
