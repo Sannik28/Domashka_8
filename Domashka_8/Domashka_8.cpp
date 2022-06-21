@@ -112,208 +112,293 @@ int main()
 			a1--;
 		}
 		*/
-/*
-	int n;
-	char l = '*', t = '-';
-	cout << "Укажите номер фигуры для вывода на экран" << endl
-		<< "1 - a\n2 - б\n3 - в\n4 - г\n5 - д\n6 - е\n7 - ж\n8 - з\n9 - и\n10 - к\n0 - выход\n";
-	do {
-		cin >> n;
-		switch (n) {
-		case 1: {
-			for (int i = 0; i < 8; i++) {
-				cout << string((8 - i), char(l)) << string(i, char(t));
-				cout << endl;
-			}
-			break;
-		}
-		case 2: {
-			for (int i = 1; i < 9; i++) {
-				cout << string(i, char(l)) << string((8 - i), char(t));
-				cout << endl;
-			}
-			break;
-		}
-		case 3: {
-			int m = 0;
-			for (int i = 0; i < 9; i++) {
-				for (int j = 0; j < 9 - i; j++) {
-					if (j >=i) {
-						cout << "*";
+		/*
+			int n;
+			char l = '*', t = '-';
+			cout << "Укажите номер фигуры для вывода на экран" << endl
+				<< "1 - a\n2 - б\n3 - в\n4 - г\n5 - д\n6 - е\n7 - ж\n8 - з\n9 - и\n10 - к\n0 - выход\n";
+			do {
+				cin >> n;
+				switch (n) {
+				case 1: {
+					for (int i = 0; i < 8; i++) {
+						cout << string((8 - i), char(l)) << string(i, char(t));
+						cout << endl;
 					}
-					else cout << "-";
-					m = j;
+					break;
 				}
-				cout << string((9 - m), t);
-				cout << "\n";
-			}
-			break;
-		}
+				case 2: {
+					for (int i = 1; i < 9; i++) {
+						cout << string(i, char(l)) << string((8 - i), char(t));
+						cout << endl;
+					}
+					break;
+				}
+				case 3: {
+					int m = 0;
+					for (int i = 0; i < 9; i++) {
+						for (int j = 0; j < 9 - i; j++) {
+							if (j >=i) {
+								cout << "*";
+							}
+							else cout << "-";
+							m = j;
+						}
+						cout << string((9 - m), t);
+						cout << "\n";
+					}
+					break;
+				}
 
-		case 4: {
-			for (int i = 0; i < 9; i++) {
-				for (int j = 0; j < 9; j++) {
-					if (i >= j && i + j >= 9 - 1)
-						cout << '*';
-					else cout << "-";
+				case 4: {
+					for (int i = 0; i < 9; i++) {
+						for (int j = 0; j < 9; j++) {
+							if (i >= j && i + j >= 9 - 1)
+								cout << '*';
+							else cout << "-";
+						}
+						cout << "\n";
+					}
+					break;
 				}
-				cout << "\n";
-			}
-			break;
-		}
-		case 5: {
-			for (int i = 0; i < 9; i++) {
-				for (int j = 0; j < 9; j++) {
-					if (i >= j && i + j >= 9 - 1|| i <= j && i + j <= 9 - 1)
-						cout << '*';
-					else cout << "-";
+				case 5: {
+					for (int i = 0; i < 9; i++) {
+						for (int j = 0; j < 9; j++) {
+							if (i >= j && i + j >= 9 - 1|| i <= j && i + j <= 9 - 1)
+								cout << '*';
+							else cout << "-";
+						}
+						cout << "\n";
+					}
+					break;
 				}
-				cout << "\n";
-			}
-			break;
-		}
-		case 6: {
-			for (int i = 0; i < 9; i++) {
-				for (int j = 0; j < 9; j++) {
-					if (i > j && i + j > 9 - 1 || i < j && i + j < 9 - 1)
-						cout << '-';
-					else cout << '*';
+				case 6: {
+					for (int i = 0; i < 9; i++) {
+						for (int j = 0; j < 9; j++) {
+							if (i > j && i + j > 9 - 1 || i < j && i + j < 9 - 1)
+								cout << '-';
+							else cout << '*';
+						}
+						cout << "\n";
+					}
+					break;
 				}
-				cout << "\n";
-			}
-			break;
-		}
-		case 7: {
-			for (int i = 0; i < 9; i++) {
-				for (int j = 0; j < 9; j++) {
-					if (i >= j && i + j <= 9 - 1)
-						cout << '*';
-					else cout << '-';
+				case 7: {
+					for (int i = 0; i < 9; i++) {
+						for (int j = 0; j < 9; j++) {
+							if (i >= j && i + j <= 9 - 1)
+								cout << '*';
+							else cout << '-';
+						}
+						cout << "\n";
+					}
+					break;
 				}
-				cout << "\n";
-			}
-			break;
-		}
-		case 8: {
-			for (int i = 0; i < 9; i++) {
-				for (int j = 0; j < 9; j++) {
-					if (i + j >= 9 - 1 && i <= j)
-						cout << '*';
-					else cout << '-';
+				case 8: {
+					for (int i = 0; i < 9; i++) {
+						for (int j = 0; j < 9; j++) {
+							if (i + j >= 9 - 1 && i <= j)
+								cout << '*';
+							else cout << '-';
+						}
+						cout << "\n";
+					}
+					break;
 				}
-				cout << "\n";
-			}
-			break;
-		}
-		case 9: {
-			for (int i = 0; i < 9; i++) {
-				for (int j = 0; j < 9; j++) {
-					if (i + j > 9 - 1)
-						cout << '-';
-					else cout << '*';
+				case 9: {
+					for (int i = 0; i < 9; i++) {
+						for (int j = 0; j < 9; j++) {
+							if (i + j > 9 - 1)
+								cout << '-';
+							else cout << '*';
+						}
+						cout << "\n";
+					}
+					break;
 				}
-				cout << "\n";
-			}
-			break;
-		}
-		case 10: {
-			for (int i = 0; i < 9; i++) {
-				for (int j = 0; j < 9; j++) {
-					if (i <= j)
-						cout << '*';
-					else cout << '-';
+				case 10: {
+					for (int i = 0; i < 9; i++) {
+						for (int j = 0; j < 9; j++) {
+							if (i <= j)
+								cout << '*';
+							else cout << '-';
+						}
+						cout << "\n";
+					}
+					break;
 				}
-				cout << "\n";
+				default:
+					cout << "Введено не верное значение.";
+				}
+			} while (n != 0);
+			*/
+			/*
+			int number, sum = 0, n = 0, nul = 0, k, punkt;
+			double sred;
+			cout << "Введите число: \n";
+			cin >> number;
+			do {
+				cout << "Какую информацию вы хотите получить по указанному числу? Выберите пункт меню.\n"
+					<< "1 - Количество цифр в введенном числе\n"
+					<< "2 - Сумма цифр введенного числа\n"
+					<< "3 - Среднеарифметическое цифр введенного числа\n"
+					<< "4 - Количество нулей в введенном числе\n"
+					<< "5 - Выход\n";
+				cin >> punkt;
+				while (number > 0) {
+					k = number % 10;
+					sum += k;
+					n++;
+					if (k == 0) nul++;
+					number = number / 10;
+				}
+				sred = (double)sum / n;
+				switch (punkt) {
+				case 1: {
+					cout << "Количество цифр в введенном числе - " << n << endl;
+					break;
+				}
+				case 2: {
+					cout << "Сумма цифр введенного числа - " << sum << endl;
+					break;
+				}
+				case 3: {
+					cout << "Среднеарифметическое цифр введенного числа - " << sred << endl;
+					break;
+				}
+				case 4: {
+					cout << "4 - Количество нулей в введенном числе - " << nul << endl;
+					break;
+				}
+				case 5: {
+					break; }
+				default:
+					cout << "Ошибка. Повторите ввод.";
+				}
+			} while (k != 5);
+			*/
+			/*
+			int n;
+			cout << "Введите размер ячейки" << endl;
+			cin >> n;
+			for (int i = 1; i < 9; i++) {
+				if (i % 2 == 0) {
+					for (int k = 0; k < n; k++) {
+						for (int j = 1; j < 5; j++) {
+							for (int m = 0; m < n; m++) {
+								cout << " * ";
+							}
+							for (int t = 0; t < n; t++) {
+								cout << "   ";
+							}
+						}
+						cout << endl;
+					}
+				}
+
+				else {
+					for (int k = 0; k < n; k++) {
+						for (int j = 1; j < 5; j++) {
+							for (int m = 0; m < n; m++) {
+								cout << "   ";
+							}
+							for (int t = 0; t < n; t++) {
+								cout << " * ";
+							}
+						}
+						cout << endl;
+					}
+
+				}
 			}
-			break;
-		}
-		default:
-			cout << "Введено не верное значение.";
-		}
-	} while (n != 0);
-	*/
+				cout << endl;
+				*/
+				
+					int v, vn, n, koln;
+					int cnk = 1, cnh = 2, cnsh = 3, sum = 0;
+					int ckp = 1, ckch = 2, ckv = 3;
+					cout << "Укажите количество гостей которые будут делать заказ\n";
+					cin >> n;
+					for (int i = 0; i < n; i++) {
+						do {
+							cout << "Гость "<<i+1<<" сделайте свой заказ: \n1 - выбор напитка\n"
+								<<"2 - выбор кондитерских изделий\n0 - окончание оформления заказа\n";
+							cin >> v;
+							if (v != 0) {
+								switch (v) {
+								case 1: {
+									cout << "Для выбора напитка укажите соответствующий пункт меню:\n";
+									cout << "1- кофе " << cnk << " руб.\n2 - чай " << cnh
+										<< " руб.\n3 - горячий шоколад " << cnsh
+										<< " руб.\n";
+									cin >> vn;
+									switch (vn) {
+									case 1: {
+										cout << "Укажите количество выбранного напитка\n";
+										cin >> koln;
+										sum = sum + (cnk * koln);
+										break;
+									}
+									case 2: {
+										cout << "Укажите количество выбранного напитка\n";
+										cin >> koln;
+										sum = sum + (cnh * koln);
+										break;
+									}
+									case 3: {
+										cout << "Укажите количество выбранного напитка\n";
+										cin >> koln;
+										sum = sum + (cnsh * koln);
+										break;
+									}
+									default: { cout << "Ошибка ввода\n"; break; }
+									}
+								}
+								
+								case 2: {
+									cout << "Для выбора кондитерского изделия укажите соответствующий пункт меню:\n";
+									cout << "1- пироженое " << ckp << " руб.\n2 - чизкейк " << ckch
+										<< " руб.\n3 - пирожок " << ckv
+										<< " руб.\n";
+									cin >> vn;
+									switch (vn) {
+									case 1: {
+										cout << "Укажите количество\n";
+										cin >> koln;
+										sum = sum + (ckp * koln);
+										break;
+									}
+									case 2: {
+										cout << "Укажите количество\n";
+										cin >> koln;
+										sum = sum + (ckch * koln);
+										break;
+									}
+									case 3: {
+										cout << "Укажите количество\n";
+										cin >> koln;
+										sum = sum + (ckv * koln);
+										break;
+									}
+									default: { cout << "Ошибка ввода\n"; break; }
+									}
+								}
+								//default: { cout << "Ошибка ввода"; break; }
+								}
+							}
+						} while (v != 0);
+					}
+					cout << "Сумма вашего заказа составляет " << sum << " руб.";
+
+
+					
 /*
-int number, sum = 0, n = 0, nul = 0, k, punkt;
-double sred;
-cout << "Введите число: \n";
-cin >> number;
-do {
-	cout << "Какую информацию вы хотите получить по указанному числу? Выберите пункт меню.\n"
-		<< "1 - Количество цифр в введенном числе\n"
-		<< "2 - Сумма цифр введенного числа\n"
-		<< "3 - Среднеарифметическое цифр введенного числа\n"
-		<< "4 - Количество нулей в введенном числе\n"
-		<< "5 - Выход\n";
-	cin >> punkt;
-	while (number > 0) {
-		k = number % 10;
-		sum += k;
-		n++;
-		if (k == 0) nul++;
-		number = number / 10;
-	}
-	sred = (double)sum / n;
-	switch (punkt) {
-	case 1: {
-		cout << "Количество цифр в введенном числе - " << n << endl;
-		break;
-	}
-	case 2: {
-		cout << "Сумма цифр введенного числа - " << sum << endl;
-		break;
-	}
-	case 3: {
-		cout << "Среднеарифметическое цифр введенного числа - " << sred << endl;
-		break;
-	}
-	case 4: {
-		cout << "4 - Количество нулей в введенном числе - " << nul << endl;
-		break;
-	}
-	case 5: {
-		break; }
-	default:
-		cout << "Ошибка. Повторите ввод.";
-	}
-} while (k != 5);
-*/
-/*
-int n;
-cout << "Введите размер ячейки" << endl;
-cin >> n;
-for (int i = 1; i < 9; i++) {
-	if (i % 2 == 0) {
-		for (int k = 0; k < n; k++) {
-			for (int j = 1; j < 5; j++) {
-				for (int m = 0; m < n; m++) {
-					cout << " * ";
-				}
-				for (int t = 0; t < n; t++) {
-					cout << "   ";
-				}
-			}
-			cout << endl;
+	for (int i = 0; i < 10; i++) {
+		for (int j = 65; j < 76; j++) {
+			cout << (char)j << i << " ";
 		}
-	}
-
-	else {
-		for (int k = 0; k < n; k++) {
-			for (int j = 1; j < 5; j++) {
-				for (int m = 0; m < n; m++) {
-					cout << "   ";
-				}
-				for (int t = 0; t < n; t++) {
-					cout << " * ";
-				}
-			}
-			cout << endl;
-		}
-
-	}
-}
-	cout << endl;
-	*/
-
+		cout << endl;
+	}*/
 }
 
 
