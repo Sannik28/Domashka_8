@@ -314,76 +314,93 @@ int main()
 				cout << endl;
 				*/
 				
-					int v, vn, n, koln;
-					int cnk = 1, cnh = 2, cnsh = 3, sum = 0;
-					int ckp = 1, ckch = 2, ckv = 3;
-					cout << "Укажите количество гостей которые будут делать заказ\n";
+					int v, vn, n, kol, otv;
+					int cn, cnk = 1, cnh = 2, cnsh = 3, sum = 0;
+					int ck, ckp = 1, ckch = 2, ckv = 3;
+					cout << "Здравствуйте!\n"
+					<< "Приветствуем Вас в нашем кафетерии " 
+						<<"Ромашка\n";
+						cout << "Укажите количество гостей которые будут делать заказ\n";
 					cin >> n;
 					for (int i = 0; i < n; i++) {
 						do {
-							cout << "Гость "<<i+1<<" сделайте свой заказ: \n1 - выбор напитка\n"
+							cout << "Заказ гостя " << i + 1 << endl;
+							cout << "Выберите пункт меню: \n1 - выбор напитка\n"
 								<<"2 - выбор кондитерских изделий\n0 - окончание оформления заказа\n";
 							cin >> v;
 							if (v != 0) {
 								switch (v) {
 								case 1: {
-									cout << "Для выбора напитка укажите соответствующий пункт меню:\n";
-									cout << "1- кофе " << cnk << " руб.\n2 - чай " << cnh
-										<< " руб.\n3 - горячий шоколад " << cnsh
-										<< " руб.\n";
-									cin >> vn;
-									switch (vn) {
-									case 1: {
-										cout << "Укажите количество выбранного напитка\n";
-										cin >> koln;
-										sum = sum + (cnk * koln);
-										break;
-									}
-									case 2: {
-										cout << "Укажите количество выбранного напитка\n";
-										cin >> koln;
-										sum = sum + (cnh * koln);
-										break;
-									}
-									case 3: {
-										cout << "Укажите количество выбранного напитка\n";
-										cin >> koln;
-										sum = sum + (cnsh * koln);
-										break;
-									}
-									default: { cout << "Ошибка ввода\n"; break; }
-									}
+									do {
+										cout << "Заказ гостя " << i + 1 << endl;
+										cout << "Для выбора напитка укажите соответствующий пункт меню:\n";
+										cout << "1- кофе " << cnk << " руб.\n2 - чай " << cnh
+											<< " руб.\n3 - горячий шоколад " << cnsh
+											<< " руб.\n0 - переход к следующему меню\n";
+										cin >> vn;
+										switch (vn) {
+										case 1: {
+											cn = cnk;
+											break;
+										}
+										case 2: {
+											cn=cnh;
+											break;
+										}
+										case 3: {
+											cn = cnsh;
+											break;
+										}
+										case 0: {break; }
+										default: { cout << "Ошибка ввода\n"; }
+										}
+										if (vn != 0) {
+											cout << "Укажите количество выбранных напитков\n";
+											cin >> kol;
+											sum += cn * kol;
+											cout << "Хотите выбрать еще напиток? 1- да 2 - нет\n";
+											cin >> otv;
+											if (otv == 2) vn = 0;
+										}
+									} while (vn != 0);
+									break;
 								}
 								
 								case 2: {
-									cout << "Для выбора кондитерского изделия укажите соответствующий пункт меню:\n";
-									cout << "1- пироженое " << ckp << " руб.\n2 - чизкейк " << ckch
-										<< " руб.\n3 - пирожок " << ckv
-										<< " руб.\n";
-									cin >> vn;
-									switch (vn) {
-									case 1: {
+									do {
+										cout << "Заказ гостя " << i + 1 << endl;
+										cout << "Для выбора кондитерского изделия укажите соответствующий пункт меню:\n";
+										cout << "1- пироженое " << ckp << " руб.\n2 - чизкейк " << ckch
+											<< " руб.\n3 - пирожок " << ckv
+											<< " руб.\n0 - переход к следующему меню\n";
+										cin >> vn;
+										switch (vn) {
+										case 1: {
+											ck=ckp;
+											break;
+										}
+										case 2: {
+											ck=ckch;
+											break;
+										}
+										case 3: {
+											ck = ckv;
+											break;
+										}
+										case 0: {break; }
+										default: { cout << "Ошибка ввода\n"; }
+										}
+
 										cout << "Укажите количество\n";
-										cin >> koln;
-										sum = sum + (ckp * koln);
-										break;
-									}
-									case 2: {
-										cout << "Укажите количество\n";
-										cin >> koln;
-										sum = sum + (ckch * koln);
-										break;
-									}
-									case 3: {
-										cout << "Укажите количество\n";
-										cin >> koln;
-										sum = sum + (ckv * koln);
-										break;
-									}
-									default: { cout << "Ошибка ввода\n"; break; }
-									}
+										cin >> kol;
+										sum += cn * kol;
+										cout << "Хотите выбрать еще? 1- да 2 - нет\n";
+										cin >> otv;
+										if (otv == 2) vn = 0;
+									} while (vn != 0);
+									break;
 								}
-								//default: { cout << "Ошибка ввода"; break; }
+								default: { cout << "Ошибка. Повторите ввод.\n"; }
 								}
 							}
 						} while (v != 0);
